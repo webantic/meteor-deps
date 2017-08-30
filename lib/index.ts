@@ -150,5 +150,6 @@ function get (key: string, callback?: Function) {
 
 export {
   inject,
-  wrapExports
+  wrapExports,
+  get
 }

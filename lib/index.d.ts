@@ -19,4 +19,16 @@ declare function wrapExports(parentModule: any, exports: any): {
  * @param {any} meteorDeps The dependencies to store
  */
 declare function inject(meteorDeps: any): void;
-export { inject, wrapExports };
+/**
+ * Get a Meteor dependency. Returns immediately if the dependency is available
+ * when this function is invoked. Otherwise calls a supplied callback, unless
+ * one is not supplied - in which case a promise is returned that resolves to
+ * the requested dependency
+ *
+ * @param {string} key The name of the dependency to get. e.g. "Meteor" or "Mongo"
+ * @param {Function} [callback] An optional callback function which receives
+ * the requested dependency as soon as it becomes available
+ * @returns {any|void|Promise}
+ */
+declare function get(key: string, callback?: Function): any;
+export { inject, wrapExports, get };
