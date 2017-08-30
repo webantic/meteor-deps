@@ -1,0 +1,33 @@
+{
+  "name": "@webantic/meteor-deps",
+  "version": "1.1.0",
+  "description": "Provide an injection point for dependencies",
+  "types": "lib/index.d.ts",
+  "main": "lib/index",
+  "scripts": {
+    "dist": "npm run lint && npm run build",
+    "prepublish": "npm run dist",
+    "lint": "tslint --fix --type-check -p . -c tslint.json -e lib/*.d.ts lib/*.ts",
+    "build": "tsc -p . || :"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/webantic/meteor-deps.git"
+  },
+  "author": "Webantic (Carl Evans)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webantic/meteor-deps/issues"
+  },
+  "homepage": "https://github.com/webantic/meteor-deps#readme",
+  "dependencies": {
+    "@webantic/dependency-mapper": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/debug": "0.0.30",
+    "@types/node": "^8.0.26",
+    "tslint": "^5.7.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.4.2"
+  }
+}
