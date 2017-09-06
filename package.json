@@ -1,14 +1,15 @@
 {
   "name": "@webantic/meteor-deps",
-  "version": "1.1.3",
+  "version": "1.1.7",
   "description": "Provide an injection point for dependencies",
   "types": "lib/index.d.ts",
   "main": "lib/index",
   "scripts": {
-    "dist": "npm run lint && npm run build",
+    "dist": "npm run format:ts && npm run build && npm run bundle",
     "prepublish": "npm run dist",
-    "lint": "tslint --fix --type-check -p . -c tslint.json -e lib/*.d.ts lib/*.ts",
-    "build": "tsc -p . || :"
+    "format:ts": "tslint --fix --force --format stylish --config tslint.json --project tsconfig.json --type-check --rules-dir .rules/ts",
+    "bundle": "browserify lib/index.js -o bundle.js --debug",
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
@@ -21,13 +22,16 @@
   },
   "homepage": "https://github.com/webantic/meteor-deps#readme",
   "dependencies": {
-    "@webantic/dependency-mapper": "^1.1.4"
-  },
-  "devDependencies": {
     "@types/debug": "0.0.30",
     "@types/node": "^8.0.26",
+    "@webantic/dependency-mapper": "^1.1.7",
+    "debug": "^3.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^14.4.0",
     "tslint": "^5.7.0",
+    "tslint-config-standard": "^6.0.1",
     "tslint-eslint-rules": "^4.1.1",
-    "typescript": "^2.4.2"
+    "typescript": "^2.5.2"
   }
 }

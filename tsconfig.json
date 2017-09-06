@@ -6,10 +6,12 @@
     "removeComments": false,
     "declaration": true,
     "preserveConstEnums": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "rootDir": ".",
+    "typeRoots": ["node_modules/@types"]
   },
   "include": [
-    "**/*.ts"
+    "*.ts"
   ],
   "exclude": [
     "node_modules",
