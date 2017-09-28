@@ -143,7 +143,7 @@ function get (key: string, callback?: Function) {
   } else {
     // If no callback is provided, return a promise which resolves to the dependency
     return new Promise(function promiseResolver (resolve: Function) {
-      callbackMap.push(resolve)
+      callbackMap[key].push(resolve)
     })
   }
 }
