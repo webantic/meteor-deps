@@ -1,6 +1,6 @@
 import mapper from '@webantic/dependency-mapper'
-import * as path from 'path'
 import * as debug from 'debug'
+import * as path from 'path'
 
 const log = debug('meteor-deps:log:' + module.id)
 const error = debug('meteor-deps:error:' + module.id)
@@ -107,14 +107,14 @@ function initialiseSubmodules (meteorDeps: any) {
  */
 function notifyWaiters () {
   log('Notifying any watchers')
- for (const key in dependencyMap) {
-   if (key in callbackMap) {
-     while (callbackMap[key].length) {
-       log('Invoking callback to provide value for ' + key)
-       callbackMap[key].pop()(dependencyMap[key])
-     }
-   }
- }
+  for (const key in dependencyMap) {
+    if (key in callbackMap) {
+      while (callbackMap[key].length) {
+        log('Invoking callback to provide value for ' + key)
+        callbackMap[key].pop()(dependencyMap[key])
+      }
+    }
+  }
 }
 
 /**
@@ -128,7 +128,7 @@ function notifyWaiters () {
  * the requested dependency as soon as it becomes available
  * @returns {any|void|Promise}
  */
-function get (key: string, callback?: Function) {
+function get (key: string, callback?: any) {
   // If the dependency is available immediately, return it
   if (key in dependencyMap) {
     return dependencyMap[key]
@@ -142,7 +142,7 @@ function get (key: string, callback?: Function) {
     callbackMap[key].push(callback)
   } else {
     // If no callback is provided, return a promise which resolves to the dependency
-    return new Promise(function promiseResolver (resolve: Function) {
+    return new Promise((resolve) => {
       callbackMap[key].push(resolve)
     })
   }

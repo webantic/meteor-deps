@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "lib": ["es7", "ES2017"],
+    "target": "es6",
     "module": "commonjs",
     "noImplicitAny": true,
     "removeComments": false,
     "declaration": true,
     "preserveConstEnums": true,
-    "sourceMap": true,
-    "rootDir": ".",
-    "typeRoots": ["node_modules/@types"]
+    "sourceMap": true
   },
   "include": [
-    "*.ts"
+    "**/*.ts"
   ],
   "exclude": [
     "node_modules",

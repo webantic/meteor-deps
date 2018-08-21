@@ -1,7 +1,4 @@
 {
-  "rulesDirectory": [
-    ".rules/ts"
-  ],
   "extends": [
     "tslint:recommended",
     "tslint-eslint-rules",
