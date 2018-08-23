@@ -1,6 +1,6 @@
 {
   "name": "@webantic/meteor-deps",
-  "version": "1.4.2",
+  "version": "2.0.0",
   "description": "Provide an injection point for dependencies",
   "types": "lib/index.d.ts",
   "main": "lib/index",
@@ -23,11 +23,8 @@
   "homepage": "https://github.com/webantic/meteor-deps#readme",
   "dependencies": {
     "debug": "^3.1.0",
-    "@webantic/dependency-mapper": "2.2.2"
+    "@webantic/dependency-mapper": ">=3.0.0"
   },
-  "bundledDependencies": [
-    "@webantic/dependency-mapper"
-  ],
   "devDependencies": {
     "@types/debug": "0.0.30",
     "@types/node": "^10.7.1",
@@ -36,6 +33,5 @@
     "tslint-config-standard": "^7.1.0",
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.0.1"
-  },
-  "peerDependencies": {}
+  }
 }
