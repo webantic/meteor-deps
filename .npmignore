@@ -1,11 +1,11 @@
-.vscode
-.rules
+.vscode/**/*
+.rules/**/*
 .meteor*
 tslint.json
 tsconfig.json
 .editorconfig
 node_modules
-test
+test/**/*
 .git/**
 
 .gitignore
@@ -14,3 +14,7 @@ test
 !**/*.d.ts
 
 **/*.js.map
+*.tgz
+
+bundle.js
+README.md
