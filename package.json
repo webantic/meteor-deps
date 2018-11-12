@@ -1,6 +1,6 @@
 {
   "name": "@webantic/meteor-deps",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Provide an injection point for dependencies",
   "types": "lib/index.d.ts",
   "main": "lib/index",

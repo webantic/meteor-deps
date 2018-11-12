@@ -14,7 +14,10 @@ test/**/*
 !**/*.d.ts
 
 **/*.js.map
+
+
 *.tgz
+!vendor/*.tgz
 
 bundle.js
 README.md
